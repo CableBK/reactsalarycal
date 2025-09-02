@@ -62,30 +62,50 @@ body {
     color: #fff176; /* เหลืองพาสเทลตัดกับ bg */
 }
 
-/* Inputs */
-.form-group label {
-    color: #f0f0f0;
-    font-weight: 500;
+/* Form group spacing */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* ช่องไฟระหว่าง field */
 }
 
-.form-group input[type="number"] {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-}
+    /* Label styling */
+    .form-group label {
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        color: #f5f5f5; /* สีอ่อนอ่านง่ายบน bg ม่วงฟ้า */
+    }
 
-    .form-group input[type="number"]::placeholder {
+    /* Input styling */
+    .form-group input[type="number"],
+    .form-group input[type="text"] {
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+    }
+
+    /* Placeholder */
+    .form-group input::placeholder {
         color: rgba(255, 255, 255, 0.6);
     }
 
-    .form-group input[type="number"]:focus {
+    /* Focus effect */
+    .form-group input:focus {
         border-color: #90caf9;
-        box-shadow: 0 0 0 2px rgba(144, 202, 249, 0.4);
+        box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.3);
         outline: none;
     }
 
-/* Button */
-.calculate-button {
+/* Remove number spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    /* Button */
+    .calculate-button {
     background: linear-gradient(90deg, #42a5f5, #7e57c2);
     color: #fff;
     padding: 12px 24px;
@@ -101,14 +121,13 @@ body {
         background: linear-gradient(90deg, #1e88e5, #5e35b1);
     }
 
-/* Chrome, Safari, Edge, Opera */
+/* Remove number spinners */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
 }

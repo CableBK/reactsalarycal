@@ -11,30 +11,29 @@ body {
     background-attachment: fixed;
 }
 
-/* Container */
 .mud-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* ให้ขอบบนตรงกัน */
+    gap: 24px; /* ช่องว่างระหว่างซ้าย-ขวา */
     max-width: 1200px;
     width: 100%;
     padding: 32px;
-    gap: 24px;
-    flex-wrap: wrap; /* รองรับจอเล็ก */
+    flex-wrap: nowrap; /* ❌ ไม่ให้ตกล่าง */
 }
 
-/* Card (liquid glass style) */
+/* Card (liquid glass) */
 .mud-paper {
-    background: rgba(255, 255, 255, 0.15); /* semi-transparent */
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(12px); /* glass effect */
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 32px;
-    min-width: 320px;
-    flex: 1 1 45%; /* 2 คอลัมน์ */
-    color: #fff; /* ตัวหนังสือเป็นขาวอ่านง่าย */
+    flex: 1 1 50%; /* ครึ่งจอซ้าย-ขวา */
+    min-width: 400px;
+    color: #fff;
 }
 
 /* Responsive: มือถือให้เต็มจอ */

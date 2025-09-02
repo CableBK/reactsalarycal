@@ -1,48 +1,137 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Basic reset for consistent styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Using Roboto as in MudBlazor */
+    background-color: #f5f5f5; /* Light grey background */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.mud-container {
+    max-width: 1440px; /* Equivalent to MudBlazor MaxWidth.ExtraExtraLarge */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px; /* Similar to Blazor default padding */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mud-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Equivalent to Justify.Center */
+    gap: 16px; /* Spacing between grid items */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.mud-item {
+    flex-grow: 1; /* Allow items to grow */
+    flex-basis: 100%; /* Default to full width on small screens */
 }
 
-.card {
-  padding: 2em;
+/* For sm (small) screens and up, take half width */
+@media (min-width: 600px) {
+    .mud-col-sm-6 {
+        flex-basis: calc(50% - 16px); /* 50% width minus half of the gap */
+        max-width: calc(50% - 16px);
+    }
 }
 
-.read-the-docs {
-  color: #888;
+.mud-paper {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12); /* Equivalent to Elevation="3" */
+    padding: 32px; /* pa-8 in MudBlazor */
+    margin: 8px; /* ma-2 in MudBlazor */
+    min-height: 400px; /* Ensure cards have similar height */
+    display: flex;
+    flex-direction: column;
 }
 
-.gradient-bg {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    padding: 16px;
+/* Form styling */
+.form-group {
+    margin-bottom: 16px;
 }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 4px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.6); /* MudBlazor label color */
+    }
+
+    .form-group input[type="number"] {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid rgba(0, 0, 0, 0.23); /* MudBlazor input border */
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+        .form-group input[type="number"]:focus {
+            border-color: #1976d2; /* Primary color on focus */
+            box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+            outline: none;
+        }
+
+.calculate-button {
+    background-color: #1976d2; /* MudBlazor Primary color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 16px; /* mt-4 in MudBlazor */
+    transition: background-color 0.2s ease-in-out;
+}
+
+    .calculate-button:hover {
+        background-color: #1565c0; /* Darker primary on hover */
+    }
+
+/* Salary Breakdown Text Styling (MudBlazor Typography Emulation) */
+.mud-text-h5 {
+    font-size: 1.5rem; /* Typo.h5 */
+    font-weight: 400;
+    line-height: 1.334;
+    letter-spacing: 0em;
+    margin-bottom: 0.35em; /* GutterBottom */
+}
+
+.mud-text-h6 {
+    font-size: 1.25rem; /* Typo.h6 */
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    color: rgba(0, 0, 0, 0.6); /* mud-text-secondary */
+}
+
+.bold-primary {
+    font-weight: bold;
+    color: #1976d2; /* var(--mud-palette-primary) */
+}
+
+.my-4 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.12); /* MudDivider */
+}
+
+.mud-text-subtitle1 {
+    font-size: 1rem; /* Typo.subtitle1 */
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+    margin-top: 16px; /* mt-4 */
+    margin-bottom: 8px;
+}
+
+.mud-text-body2 {
+    font-size: 0.875rem; /* Typo.body2 */
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    margin-bottom: 4px;
+}
+
+    .mud-text-body2:last-of-type {
+        margin-bottom: 0;
+    }

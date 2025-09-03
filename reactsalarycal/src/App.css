@@ -6,37 +6,37 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Gradient background (แบบ .NET / VS) */
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    /* BG = ขาวล้วน */
+    background: #f5f5f5; /* หรือ #ffffff */
     background-attachment: fixed;
 }
 
 .mud-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* ให้ขอบบนตรงกัน */
-    gap: 24px; /* ช่องว่างระหว่างซ้าย-ขวา */
+    align-items: flex-start;
+    gap: 24px;
     max-width: 1200px;
     width: 100%;
     padding: 32px;
-    flex-wrap: nowrap; /* ❌ ไม่ให้ตกล่าง */
+    flex-wrap: nowrap;
 }
 
-/* Card (liquid glass) */
+/* Card (liquid glass - ขาวใส) */
 .mud-paper {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.6); /* ✅ ขาวโปร่งใส */
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 32px;
-    flex: 1 1 50%; /* ครึ่งจอซ้าย-ขวา */
+    flex: 1 1 50%;
     min-width: 400px;
-    color: #fff;
+    color: #333; /* ✅ เปลี่ยนเป็นเข้มเพื่ออ่านง่าย */
 }
 
-/* Responsive: มือถือให้เต็มจอ */
+/* Responsive */
 @media (max-width: 768px) {
     .mud-paper {
         flex: 1 1 100%;
@@ -46,65 +46,59 @@ body {
 /* Typography */
 .mud-text-h5 {
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0.5em;
+    color: #222;
 }
 
 .mud-text-h6 {
     font-size: 1.3rem;
     font-weight: 400;
-    color: #e0e0e0;
+    color: #555;
 }
 
 .bold-primary {
     font-weight: bold;
-    color: #fff176; /* เหลืองพาสเทลตัดกับ bg */
+    color: #1976d2; /* ฟ้า Material Design */
 }
 
-/* Form group spacing */
+/* Form group */
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px; /* ช่องไฟระหว่าง field */
+    margin-bottom: 20px;
 }
 
-    /* Label styling */
     .form-group label {
         margin-bottom: 8px;
         font-weight: 500;
         font-size: 0.95rem;
-        color: #f5f5f5; /* สีอ่อนอ่านง่ายบน bg ม่วงฟ้า */
+        color: #333;
     }
 
-    /* Input styling */
     .form-group input[type="number"],
     .form-group input[type="text"] {
         padding: 12px 14px;
         border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        background: rgba(255, 255, 255, 0.1);
-        color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.8);
+        color: #222;
         font-size: 1rem;
         transition: all 0.2s ease;
     }
 
-    /* Placeholder */
     .form-group input::placeholder {
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(0, 0, 0, 0.5);
     }
 
-    /* Focus effect */
     .form-group input:focus {
-        border-color: #90caf9;
-        box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.3);
+        border-color: #42a5f5;
+        box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.25);
         outline: none;
     }
 
-/* Remove number spinners */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    /* Button */
-    .calculate-button {
+/* ปุ่ม */
+.calculate-button {
     background: linear-gradient(90deg, #42a5f5, #7e57c2);
     color: #fff;
     padding: 12px 24px;

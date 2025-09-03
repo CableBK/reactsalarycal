@@ -154,29 +154,61 @@ function App() {
                 {hasCalculated ? (
                     <>
                         <h2 className="mud-text-h5">Salary Breakdown</h2>
-                        <h3 className="mud-text-h6 mud-text-secondary">
-                            Total Net Salary:{' '}
-                            <span className="bold-primary">{formatNumber(result)} THB</span>
+                        <h3 className="mud-text-h6 mud-text-secondary result-row">
+                            <span className="result-label">Total Net Salary:</span>
+                            <span className="bold-primary result-value">{formatNumber(result)} THB</span>
                         </h3>
                         <hr className="my-4" />
+
                         <h4 className="mud-text-subtitle1">Earnings:</h4>
-                        <p className="mud-text-body2">- Base Salary: {formatNumber(baseSalary)} THB</p>
-                        <p className="mud-text-body2">- Other Allowance: {formatNumber(otherAllowance)} THB</p>
-                        <p className="mud-text-body2">- Performance Bonus: {formatNumber(performanceBonus)} THB</p>
-                        <p className="mud-text-body2">- OT Pay (Normal): {formatNumber(otNormalPay)} THB</p>
-                        <p className="mud-text-body2">- OT Pay (Holiday): {formatNumber(otHolidayPay)} THB</p>
-                        <p className="mud-text-body2">- Holiday Pay: {formatNumber(holidayPay)} THB</p>
-                        <p className="mud-text-body2">- Travel Allowance: {formatNumber(travelAllowance)} THB</p>
-                        <p className="mud-text-body2">- Accommodation Allowance: {formatNumber(accommodationAllowance)} THB</p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Base Salary:</span>
+                            <span className="result-value">{formatNumber(baseSalary)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Other Allowance:</span>
+                            <span className="result-value">{formatNumber(otherAllowance)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Performance Bonus:</span>
+                            <span className="result-value">{formatNumber(performanceBonus)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- OT Pay (Normal):</span>
+                            <span className="result-value">{formatNumber(otNormalPay)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- OT Pay (Holiday):</span>
+                            <span className="result-value">{formatNumber(otHolidayPay)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Holiday Pay:</span>
+                            <span className="result-value">{formatNumber(holidayPay)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Travel Allowance:</span>
+                            <span className="result-value">{formatNumber(travelAllowance)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Accommodation Allowance:</span>
+                            <span className="result-value">{formatNumber(accommodationAllowance)} THB</span>
+                        </p>
 
                         <h4 className="mud-text-subtitle1 mt-4">Deductions:</h4>
-                        <p className="mud-text-body2">- Total Leave Deduction: {formatNumber(totalLeaveDeduction)} THB</p>
-                        <p className="mud-text-body2">- Social Security Deduction: {formatNumber(socialSecurity)} THB</p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Total Leave Deduction:</span>
+                            <span className="result-value">{formatNumber(totalLeaveDeduction)} THB</span>
+                        </p>
+                        <p className="mud-text-body2 result-row">
+                            <span className="result-label">- Social Security Deduction:</span>
+                            <span className="result-value">{formatNumber(socialSecurity)} THB</span>
+                        </p>
                     </>
                 ) : (
                     <p className="mud-text-body2">กรอกข้อมูลแล้วกด Calculate เพื่อดูผลลัพธ์</p>
                 )}
             </div>
+
         </div>
     );
 }
